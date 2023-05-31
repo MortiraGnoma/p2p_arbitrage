@@ -16,8 +16,8 @@ except:
 
 print(fiat)
 
-TOKEN = '5903519062:AAHaqsYWtTNAgsn7zKSNh8JEvc9SKyliY0Y'#'5923927420:AAFI0BHVjtnXy3ucDlnZsrzNA3ORSZxEM44'
-CHANNEL_ID = -1001846814154 #-1001831655098
+TOKEN = ''
+CHANNEL_ID =
 bot = telebot.TeleBot(TOKEN)
 
 def GetConnInfo(link):
