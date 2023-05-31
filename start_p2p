@@ -1,0 +1,48 @@
+#!/bin/bash
+money=$2
+fiat=$1
+
+time_sleep=5
+time_sleep_2=600
+
+echo $fiat
+echo $money
+
+Start(){
+  sleep $time_sleep
+  echo "Running USDT config for $3"
+  python3 p2p.py USDT $3 $1 $2 & # 3 - bank, 1 - fiat, 2 - money
+  sleep $time_sleep
+  echo "Running BTC config for $3"
+  python3 p2p.py BTC $3 $1 $2
+  sleep $time_sleep
+  echo "Running BUSD config for $3"
+  python3 p2p.py BUSD $3 $1 $2 &
+  sleep $time_sleep
+  echo "Running BNB config for $3"
+  python3 p2p.py BNB $3 $1 $2
+  sleep $time_sleep
+  echo "Running ETH config for $3"
+  python3 p2p.py ETH $3 $1 $2
+  sleep $time_sleep
+  #echo "Running SHIB config for $3"
+  #python p2p.py SHIB $3 $1 $2 &
+}
+
+while true
+do
+echo "Start iteration"
+Start $fiat $money Monobank
+#sleep $time_sleep_2
+Start $fiat $money PrivatBank
+#sleep $time_sleep_2
+#Start $fiat $money PUMBBank &
+#sleep $time_sleep_2
+#Start $fiat $money Sportbank &
+#sleep $time_sleep_2
+done
+
+#echo "Running first config"
+#python p2p.py USDT Monobank $fiat $money &
+#echo "Running second config"
+#python p2p.py BNB PrivatBank $fiat $money &

@@ -1,0 +1,13 @@
+#!/bin/bash
+#echo "~~~Installing Python3~~~"
+#sudo apt-get install python3
+echo "~~~Installing pyppeteer~~~"
+pip install pyppeteer
+echo "~~~Installing beautifulsoup4~~~"
+pip install beautifulsoup4
+echo "~~~Installing telebot~~~"
+pip install pyTelegramBotAPI
+echo "~~~Installing rel~~~"
+pip install rel
+echo "~~~Installing websocket~~~"
+pip install websocket-client
